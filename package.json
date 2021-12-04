@@ -23,5 +23,8 @@
   "homepage": "https://github.com/Kenttleton/ttrpg-character-manager#readme",
   "devDependencies": {
     "rollup": "^2.60.2"
+  },
+  "dependencies": {
+    "vue-splash": "^1.2.1"
   }
 }
