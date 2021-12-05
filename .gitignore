@@ -22,6 +22,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-plugins
+client/plugins
 platforms
 www
