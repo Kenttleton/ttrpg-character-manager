@@ -1,11 +1,11 @@
-// import profile from '../../api/profile'
-
 const state = () => ({
-  id: '56e60ad2-6f18-43d5-a66f-b9ef53bf6b2d',
+  id: '5413fe68-9127-4c6d-9739-525d72cf7342',
+  order: 1,
+  name: 'Philip J. Fry',
   image: '',
-  icon: 'mdi-account',
-  first_name: 'Kent',
-  last_name: 'Utterback'
+  icon: 'mdi-account-multiple',
+  system: 'DD35',
+  system_character_id: ''
 })
 
 // getters

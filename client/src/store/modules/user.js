@@ -1,9 +1,9 @@
 // import profile from '../../api/profile'
 
 const state = () => ({
-  id: 't1345t-23g2-2134gg',
   email: 'utterback.kent.a@gmail.com',
-  name: 'kenttleton'
+  name: 'kenttleton',
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InV0dGVyYmFjay5rZW50LmFAZ21haWwuY29tIiwidXNlcm5hbWUiOiJrZW50dGxldG9uIiwiaWF0IjoxNTE2MjM5MDIyfQ.ExfNBHrNtaRTGSFnV7rKN0e8seNRBJVsQdw1HEx4xn0'
 })
 
 // getters
