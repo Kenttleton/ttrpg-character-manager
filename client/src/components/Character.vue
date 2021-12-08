@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container class='character' fluid>
     <h1>{{character.name}}</h1>
     <DD35 v-if="character.system === 'DD35'"/>
     <AvatarLegends v-if="character.system === 'AvatarLegends'"/>
@@ -12,7 +12,8 @@ import AvatarLegends from './system/AvatarLegends.vue'
 export default {
   name: 'Character',
   computed: {
-    character () { return this.$store.state.character }
+    character () { return this.$store.state.character },
+    mode () { return this.$store.state.mode }
   },
   components: {
     DD35,
@@ -22,4 +23,9 @@ export default {
 </script>
 
 <style scoped>
+.character {
+  display: flex;
+  flex-direction: column;
+  margin-top: 56px;
+}
 </style>

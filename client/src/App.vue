@@ -20,18 +20,15 @@
         <v-divider></v-divider>
         <div class="characters-buttons">
           <v-btn icon>
-            <v-icon>mdi-sort</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon>mdi-pencil</v-icon>
-          </v-btn>
-          <v-btn icon>
             <v-icon>mdi-plus</v-icon>
           </v-btn>
+          <v-btn icon>
+            <v-icon>mdi-sort</v-icon>
+          </v-btn>
         </div>
-        <v-divider :class="{ 'list-mini': mini}"></v-divider>
+        <v-divider></v-divider>
         <v-list>
-         <v-list-item v-for="{id, icon, name} in characters" :key="id" link :class="{ 'list-item-mini': mini}">
+         <v-list-item v-for="{id, icon, name} in characters" :key="id" link>
             <v-list-item-icon>
               <v-icon>{{ icon }}</v-icon>
             </v-list-item-icon>
@@ -45,6 +42,10 @@
     <v-main>
       <v-container fluid>
         <vue-splash v-if="loading" :show="true" :logo="logo" title="Character Manager" color="#00bfa5" :size="300" :fixed="true"/>
+        <v-btn @click='toggleEdit' :class="{ save: mode.edit }" absolute left fab indigo>
+          <v-icon v-if='!mode.edit'>mdi-pencil</v-icon>
+          <v-icon v-if='mode.edit'>mdi-content-save</v-icon>
+        </v-btn>
         <Character/>
       </v-container>
     </v-main>
@@ -58,6 +59,7 @@ import Character from './components/Character.vue'
 export default {
   name: 'CharacterManager',
   computed: {
+    mode () { return this.$store.state.mode },
     logo () {
       return VueLogo
     },
@@ -71,6 +73,11 @@ export default {
     },
     profile () {
       return this.$store.state.profile
+    }
+  },
+  methods: {
+    toggleEdit () {
+      this.$store.commit('mode/toggleEdit')
     }
   },
   data: () => ({
@@ -103,5 +110,8 @@ export default {
   justify-content: space-evenly;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+.save {
+  background-color: #00C853 !important;
 }
 </style>

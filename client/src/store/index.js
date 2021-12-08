@@ -5,6 +5,7 @@ import characters from './modules/characters'
 import user from './modules/user'
 import character from './modules/character'
 import systemCharacter from './modules/systemCharacter'
+import mode from './modules/mode'
 
 Vue.use(Vuex)
 
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     character,
     characters,
     user,
-    systemCharacter
+    systemCharacter,
+    mode
   }
 })
