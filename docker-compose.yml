@@ -2,7 +2,8 @@
 version: '3.8'
 services:
   db:
-    image: mongo
+    #build: ./db
+    image: mongo:latest
     container_name: db
     hostname: db
     restart: always
@@ -15,7 +16,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
 
   dbadmin:
-    image: mongo-express
+    #build: ./db/admin
+    image: mongo-express:latest
     depends_on:
       - db
     container_name: dbadmin
@@ -38,7 +40,8 @@ services:
       - "3000:3000"
     environment:
       API_PORT: 3000
-      MONGO_URI: mongodb://root:example@db:27017/
+      MONGO_URI: mongodb://application:example@db:27017/
+      DATABASE: manager
 
 volumes:
   dbdata:

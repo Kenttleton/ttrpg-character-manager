@@ -8,7 +8,7 @@ router.post('/login', function(req, res, next) {
 });
 
 // REGISTER - create new user
-router.post('/register', function(req, res, next) {
+router.post('/register',async function(req, res, next) {
     try {
         const {email, password, username} = req.body;
         if(!(email && password && username)){
